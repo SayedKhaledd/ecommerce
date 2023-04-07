@@ -42,7 +42,7 @@ public class CustomerController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @RequestMapping(path = "delete-customer-by-email", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/delete-customer-by-email", method = RequestMethod.DELETE)
     public @ResponseBody
     ResponseEntity<String> deleteCustomerByEmail(@RequestParam(value = "email") String email) {
         int result = customerService.deleteCustomerByEmail(email);
@@ -60,6 +60,13 @@ public class CustomerController {
             return new ResponseEntity<>(customerDTO, HttpStatus.OK);
 
         } else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping(path = "/add-customer")
+    public @ResponseBody
+    ResponseEntity<CustomerDTO> addCustomer(@RequestBody CustomerDTO customerDTO) {
+        CustomerDTO dto = customerService.insertCustomer(customerDTO);
+         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
 

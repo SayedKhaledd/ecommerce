@@ -28,8 +28,8 @@ public class CustomerService {
         insertCustomer(dto);
     }
 
-    public void insertCustomer(CustomerDTO dto) {
-        repo.save(instance.toEntity(dto));
+    public CustomerDTO insertCustomer(CustomerDTO dto) {
+        return instance.toDTO(repo.save(instance.toEntity(dto)));
 
     }
 

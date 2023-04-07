@@ -10,7 +10,7 @@ import java.util.List;
 public class Product {
     @Id
     @Column(name = "product_id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productId;
 
     @Column(name = "product_name", nullable = false)

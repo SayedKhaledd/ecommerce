@@ -1,1 +1,2 @@
-CREATE TABLE location(id INT PRIMARY KEY , name varchar(255))
+
+CREATE TABLE if not exists location(id INT PRIMARY KEY , name varchar(255))

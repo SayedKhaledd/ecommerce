@@ -10,7 +10,7 @@ import java.util.List;
 @Table(name = "customers")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private int customerId;
 
@@ -45,6 +45,45 @@ public class Customer {
     List<Order> orders;
 
     public Customer() {
+    }
+
+    public Customer(String firstName, String lastName, String email, String password, String phone, String address, String city, String state, int zipCode) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+    }
+
+    public Customer(int customerId, String firstName, String lastName, String email, String password, String phone, String address, String city, String state, int zipCode, List<Order> orders) {
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.orders = orders;
+    }
+
+    public Customer(String firstName, String lastName, String email, String password, String phone, String address, String city, String state, int zipCode, List<Order> orders) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.orders = orders;
     }
 
     public int getCustomerId() {
