@@ -17,6 +17,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
     Customer findCustomerByEmail(String email);
 
+    //delete
     @Transactional
     int deleteCustomerByCustomerId(int id);
 

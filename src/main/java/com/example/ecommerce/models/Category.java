@@ -9,10 +9,10 @@ import java.util.List;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id",nullable = false)
+    @Column(name = "category_id", nullable = false)
     private int categoryId;
 
-    @Column(name = "category_name",nullable = false)
+    @Column(name = "category_name", nullable = false)
     private String categoryName;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)

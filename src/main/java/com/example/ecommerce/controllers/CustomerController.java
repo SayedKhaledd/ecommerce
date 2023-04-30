@@ -66,7 +66,7 @@ public class CustomerController {
     public @ResponseBody
     ResponseEntity<CustomerDTO> addCustomer(@RequestBody CustomerDTO customerDTO) {
         CustomerDTO dto = customerService.insertCustomer(customerDTO);
-         return new ResponseEntity<>(dto, HttpStatus.OK);
+        return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
 

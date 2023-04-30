@@ -17,8 +17,11 @@ public interface ProductMapper {
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
     @Mapping(source = "category.categoryId", target = "categoryId")
+    @Mapping(source = "productName", target = "name")
     ProductDTO toDTO(Product entity);
 
+    @Mapping(source = "categoryId", target = "category.categoryId")
+    @Mapping(source = "name", target = "productName")
     Product toEntity(ProductDTO dto);
 
     List<ProductDTO> toDTOList(List<Product> entities);

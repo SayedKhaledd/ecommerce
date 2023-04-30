@@ -1,6 +1,7 @@
 package com.example.ecommerce.DTOs;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class ProductDTO {
     private int productId;
@@ -9,6 +10,7 @@ public class ProductDTO {
     private double price;
     private String image;
     private int categoryId;
+    private List<OrderItemDTO> orderItems;
 
     public ProductDTO() {
     }
@@ -24,6 +26,14 @@ public class ProductDTO {
 
     public int getProductId() {
         return productId;
+    }
+
+    public List<OrderItemDTO> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItemDTO> orderItems) {
+        this.orderItems = orderItems;
     }
 
     public void setProductId(int productId) {
@@ -68,5 +78,18 @@ public class ProductDTO {
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductDTO{" +
+                "productId=" + productId +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", image='" + image + '\'' +
+                ", categoryId=" + categoryId +
+                ", orderItems=" + orderItems +
+                '}';
     }
 }
